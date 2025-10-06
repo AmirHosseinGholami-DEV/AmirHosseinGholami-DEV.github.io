@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Hossein Gholami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#d946ef',
+                        secondary: '#0f172a',
+                        dark: '#020617'
+                    },
+                    animation: {
+                        'text-gradient': 'text-gradient 3s ease infinite',
+                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    },
+                    keyframes: {
+                        'text-gradient': {
+                            '0%, 100%': {
+                                'background-position': '0% 50%'
+                            },
+                            '50%': {
+                                'background-position': '100% 50%'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="vanta-bg" class="fixed inset-0 z-0"></div>
+    <div class="smoke-effect"></div>
+    
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-secondary/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Amir Hossein Gholami</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-primary">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 backdrop-blur-md bg-secondary/95 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#about" class="text-2xl text-gray-300 hover:text-primary">About</a>
+            <a href="#skills" class="text-2xl text-gray-300 hover:text-primary">Skills</a>
+            <a href="#projects" class="text-2xl text-gray-300 hover:text-primary">Projects</a>
+            <a href="#contact" class="text-2xl text-gray-300 hover:text-primary">Contact</a>
+            <button id="close-menu" class="absolute top-6 right-6 text-gray-300 hover:text-primary">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+    </div>
+    
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-[80vh] flex flex-col justify-center">
+            <div class="glass-card p-8 max-w-3xl mx-auto">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+                    <span class="gradient-text">Amir Hossein</span> Gholami
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-8">
+                    Full-Stack Developer with 4+ years of experience, specializing in Backend development using Django & DRF. Ranked among the Top 10 Young Developers in Iran (WordSkills & Khwarizmi Festival). I craft scalable APIs, robust backend systems, and turn complex ideas into efficient, high-performance solutions.
+                  </p>                  
+                <div class="flex space-x-4">
+                    <a href="#projects" class="px-6 py-3 bg-primary rounded-lg font-medium text-white hover:bg-primary/90 transition-colors neon-glow">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border border-primary rounded-lg font-medium text-primary hover:bg-primary/10 transition-colors">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 section-title">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="glass-card p-8">
+                        <p class="text-gray-300 mb-6">
+                          I'm Amir Hossein Gholami, a Full-Stack Developer with 4+ years of experience, specializing in backend systems with Django and Django REST Framework (DRF).
+                        </p>
+                        <p class="text-gray-300 mb-6">
+                          I design and implement scalable APIs, optimize complex workflows, and build high-performance architectures that power modern web applications.
+                        </p>
+                        <p class="text-gray-300">
+                          Ranked among the Top 10 Young Developers in Iran (WordSkills & Khwarizmi Festival), I’m passionate about solving challenging problems and creating reliable, maintainable backend solutions.
+                        </p>
+                      </div>
+                      
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-primary/20">
+                            <img src="https://avatars.githubusercontent.com/u/156445833?v=4" alt="Developer" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-primary rounded-full p-4 neon-glow">
+                            <i data-feather="code" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 section-title">Technical Skills</h2>
+            <div class="glass-card p-8">
+                <h3 class="text-xl font-semibold mb-6 text-primary">Back-End:</h3>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Django</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">DRF</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Node.js</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">express</span>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-6 text-primary">Databases:</h3>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">PostgreSQL</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">MongoDB</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">MySQL</span>                </div>
+                
+                <h3 class="text-xl font-semibold mb-6 text-primary">Front-End</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Html</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Css</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Javascript</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Tailwind</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">Bootstarp</span>
+                    <span class="skill-pill px-4 py-2 bg-secondary rounded-full text-gray-300 border border-gray-700">React</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 section-title">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <a href="https://gavahino.ir" target="_blank">
+                    <div class="project-card glass-card p-6 rounded-lg">
+                        <div class="h-48 overflow-hidden rounded-lg mb-4">
+                            <img src="http://static.photos/technology/640x360/101" alt="Project 1" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">gavahino.ir</h3>
+                        <p class="text-gray-300 mb-4">Gavahino is an online platform designed to simplify and digitize the process of issuing certificates and appreciation plaques. It focuses on ensuring accuracy and providing high-level security for documents. The project's first phase has been successfully launched.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Django</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">DRF</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">MySQL</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">OTP-based SMS Service</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Validation System</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Online Payment Gateway</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Project 2 -->
+                <a href="http://kordiborazjan.ir" target="_blank" rel="noopener noreferrer">
+                    <div class="project-card glass-card p-6 rounded-lg">
+                        <div class="h-48 overflow-hidden rounded-lg mb-4">
+                            <img src="http://static.photos/technology/640x360/102" alt="Project 2" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">kordiborazjan.ir</h3>
+                        <p class="text-gray-300 mb-4">This project was developed as a comprehensive school management system and was recognized as an outstanding work at the Kharazmi Festival. The platform was designed to simplify educational management and provide an integrated system for teachers, students, and administrators.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Django</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Sqlite</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">UI/UX design</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">bootstrap</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Advanced admin panel</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Project 3 -->
+                <a href="https://github.com/AmirHosseinGholami-DEV/Shrimp-Shop-System" target="_blank" rel="noopener noreferrer">
+                    <div class="project-card glass-card p-6 rounded-lg">
+                        <div class="h-48 overflow-hidden rounded-lg mb-4">
+                            <img src="https://static.photos/technology/640x360/105" alt="Shrimp Shop System" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Shrimp Shop System</h3>
+                        <p class="text-gray-300 mb-4">This project is a specialized shrimp shop management system designed to streamline sales processes, inventory management, and order tracking. <strong>Developed for a national competition organized by the Country Shrimp Organization and Bushehr Elite Foundation.</strong></p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Django</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Sqlite</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">UI/UX design</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">bootstrap</span>
+                            <span class="text-xs px-2 py-1 bg-secondary rounded-full text-gray-300">Advanced admin panel</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <h2 class="text-3xl font-bold mb-12 section-title">Get In Touch</h2>
+            <div class="glass-card p-8 max-w-2xl mx-auto">
+                <div class="text-center mb-8">
+                    <p class="text-gray-300 mb-6">I'm currently available for freelance work. Feel free to reach out!</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-4 p-4 bg-secondary/50 rounded-lg border border-gray-800">
+                        <div class="p-3 bg-primary/10 rounded-full text-primary">
+                            <i data-feather="mail"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm text-gray-400">Email</h4>
+                            <a href="mailto:amirhosseingholami1389work@gmail.com" class="text-gray-300 hover:text-primary transition-colors">work email</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 p-4 bg-secondary/50 rounded-lg border border-gray-800">
+                        <div class="p-3 bg-primary/10 rounded-full text-primary">
+                            <i data-feather="send"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm text-gray-400">Telegram</h4>
+                            <a href="https://t.me/@AmirHosseinGholami1389" target="_blank" class="text-gray-300 hover:text-primary transition-colors">@AmirHosseinGholami1389</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="py-8 border-t border-gray-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2025 Amir Hossein Gholami. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
